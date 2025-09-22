@@ -1,11 +1,14 @@
 // import { useState } from 'react';
 
-import { ThemeProvider } from "@mui/material";
+import { Grid, ThemeProvider } from "@mui/material";
 import "./App.css";
 import { ThemedContainer } from "./components/themed/themedContainer";
 import theme from "./utls/muitheme";
 
+import CanvasWrapper from "./components/canvas/canvasWrapper";
 import NavBar from "./components/navbar/navbar";
+import Properties from "./components/properties/properties";
+import { PropertiesProvider } from "./providers/Properties.provider";
 
 export default function App() {
   return (
@@ -20,8 +23,17 @@ export default function App() {
           gap: { xs: 2, sm: 4, md: 8 },
         }}
       >
-        <NavBar />
-        <div>Facde Pattern Experiment</div>
+        <PropertiesProvider>
+          <NavBar />
+          <Grid container>
+            <Grid size={8}>
+              <CanvasWrapper />
+            </Grid>
+            <Grid size={4}>
+              <Properties />
+            </Grid>
+          </Grid>
+        </PropertiesProvider>
       </ThemedContainer>
     </ThemeProvider>
   );

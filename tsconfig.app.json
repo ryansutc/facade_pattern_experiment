@@ -25,7 +25,9 @@
 
     "paths": {
       "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@providers/*": ["./src/providers/*"],
+      "@shared/*": ["./src/shared/*"]
     },
     "sourceMap": true
   },
