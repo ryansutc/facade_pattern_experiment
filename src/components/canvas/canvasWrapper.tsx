@@ -8,6 +8,7 @@ import {
   RadioGroup,
 } from "@mui/material";
 import { useContext } from "react";
+import Canvas from "./canvas";
 
 export default function CanvasWrapper() {
   const { selectedElement, setSelectedElement } = useContext(PropertiesContext);
@@ -21,8 +22,9 @@ export default function CanvasWrapper() {
     <Grid
       container
       columnSpacing={1}
-      sx={{ height: "calc(100vh - 164px)", marginTop: "80px", border: "solid" }}
-      alignItems={"flex-start"}
+      sx={{ marginTop: "80px", border: "solid", minHeight: "500px" }}
+      justifyContent={"flex-start"}
+      alignContent={"flex-start"}
       id="dashboard-container"
     >
       <Grid size={12} sx={{ padding: 2 }}>
@@ -45,6 +47,7 @@ export default function CanvasWrapper() {
           </RadioGroup>
         </FormControl>
       </Grid>
+      <Canvas />
     </Grid>
   );
 }
