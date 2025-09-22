@@ -35,10 +35,6 @@ export const PropertiesProvider: React.FC<React.PropsWithChildren> = ({
     });
   };
 
-  console.log("text", elements.text);
-  // console.log(elements.text);
-  // console.log(elements.image);
-  console.log("Selected Element:", selectedElement);
   return (
     <PropertiesContext.Provider
       value={{ selectedElement, setSelectedElement, setElement, ...elements }}
