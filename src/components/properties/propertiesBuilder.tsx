@@ -7,8 +7,7 @@ import SectionWrapper from "./sectionWrapper";
 import { useProperties } from "@/providers/Properties.provider";
 import SourceSection from "./sections/sourceSection";
 export default function PropertiesBuilder() {
-  const properties = useProperties();
-  const { selectedElement } = properties;
+  const { selectedElement, rectangle, text, image } = useProperties();
 
   const renderSection = (section: ElementType) => {
     switch (section) {
@@ -16,22 +15,13 @@ export default function PropertiesBuilder() {
         return (
           <>
             <SectionWrapper>
-              <SizeSection
-                value={properties.rectangle.size}
-                element="rectangle"
-              />
+              <SizeSection value={rectangle.size} element="rectangle" />
             </SectionWrapper>
             <SectionWrapper>
-              <PositionSection
-                value={properties.rectangle.position}
-                element="rectangle"
-              />
+              <PositionSection value={rectangle.position} element="rectangle" />
             </SectionWrapper>
             <SectionWrapper>
-              <FillSection
-                value={properties.rectangle.fill}
-                element="rectangle"
-              />
+              <FillSection value={rectangle.fill} element="rectangle" />
             </SectionWrapper>
           </>
         );
@@ -39,16 +29,13 @@ export default function PropertiesBuilder() {
         return (
           <>
             <SectionWrapper>
-              <SizeSection value={properties.text.size} element="text" />
+              <SizeSection value={text.size} element="text" />
             </SectionWrapper>
             <SectionWrapper>
-              <PositionSection
-                value={properties.text.position}
-                element="text"
-              />
+              <PositionSection value={text.position} element="text" />
             </SectionWrapper>
             <SectionWrapper>
-              <FillSection value={properties.text.fill} element="text" />
+              <FillSection value={text.fill} element="text" />
             </SectionWrapper>
           </>
         );
@@ -56,16 +43,13 @@ export default function PropertiesBuilder() {
         return (
           <>
             <SectionWrapper>
-              <SizeSection value={properties.image.size} element="image" />
+              <SizeSection value={image.size} element="image" />
             </SectionWrapper>
             <SectionWrapper>
-              <PositionSection
-                value={properties.image.position}
-                element="image"
-              />
+              <PositionSection value={image.position} element="image" />
             </SectionWrapper>
             <SectionWrapper>
-              <SourceSection value={properties.image.source} element="image" />
+              <SourceSection value={image.source} element="image" />
             </SectionWrapper>
           </>
         );

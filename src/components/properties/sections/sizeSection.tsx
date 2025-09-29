@@ -1,8 +1,9 @@
 import { useProperties } from "@/providers/Properties.provider";
 import type { ElementType, SizeProperties } from "@/shared/types";
 import { Grid, InputAdornment, TextField, Typography } from "@mui/material";
+import { memo } from "react";
 
-export default function SizeSection({
+function SizeSection({
   value,
   element = "rectangle",
 }: {
@@ -62,3 +63,5 @@ export default function SizeSection({
     </Grid>
   );
 }
+
+export default memo(SizeSection);

@@ -9,9 +9,9 @@ import {
   Typography,
 } from "@mui/material";
 import { Sketch } from "@uiw/react-color";
-import { useState } from "react";
+import { memo, useState } from "react";
 
-export default function FillSection({
+function FillSection({
   value,
   element = "rectangle",
 }: {
@@ -73,3 +73,5 @@ export default function FillSection({
     </Grid>
   );
 }
+
+export default memo(FillSection);

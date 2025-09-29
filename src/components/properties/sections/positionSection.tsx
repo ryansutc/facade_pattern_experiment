@@ -1,8 +1,9 @@
 import { useProperties } from "@/providers/Properties.provider";
 import type { ElementType, PositionProperties } from "@/shared/types";
 import { Grid, InputAdornment, TextField, Typography } from "@mui/material";
+import { memo } from "react";
 
-export default function PositionSection({
+function PositionSection({
   value,
   element = "rectangle",
 }: {
@@ -58,3 +59,5 @@ export default function PositionSection({
     </Grid>
   );
 }
+
+export default memo(PositionSection);
