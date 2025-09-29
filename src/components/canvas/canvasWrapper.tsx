@@ -1,4 +1,4 @@
-import { PropertiesContext } from "@/providers/properties.context";
+import { useProperties } from "@/providers/Properties.provider";
 import {
   FormControl,
   FormControlLabel,
@@ -7,11 +7,10 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import { useContext } from "react";
 import Canvas from "./canvas";
 
 export default function CanvasWrapper() {
-  const { selectedElement, setSelectedElement } = useContext(PropertiesContext);
+  const { selectedElement, setSelectedElement } = useProperties();
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newVal = event.target.value as "rectangle" | "text" | "image";

@@ -1,9 +1,8 @@
-import { PropertiesContext } from "@/providers/properties.context";
+import { useProperties } from "@/providers/Properties.provider";
 import { Grid } from "@mui/material";
-import { useContext } from "react";
 
 export default function Canvas() {
-  const properties = useContext(PropertiesContext);
+  const properties = useProperties();
   const { selectedElement } = properties;
 
   const drawElement = () => {

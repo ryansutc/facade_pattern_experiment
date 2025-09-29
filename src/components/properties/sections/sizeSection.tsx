@@ -1,7 +1,6 @@
-import { PropertiesContext } from "@/providers/properties.context";
+import { useProperties } from "@/providers/Properties.provider";
 import type { ElementType, SizeProperties } from "@/shared/types";
 import { Grid, InputAdornment, TextField, Typography } from "@mui/material";
-import { useContext } from "react";
 
 export default function SizeSection({
   value,
@@ -11,7 +10,7 @@ export default function SizeSection({
   element: ElementType;
 }) {
   const { width, height } = value;
-  const { setElement } = useContext(PropertiesContext);
+  const { setElement } = useProperties();
 
   const handleUpdateProperty = (
     property: keyof SizeProperties,

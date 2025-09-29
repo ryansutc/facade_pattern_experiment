@@ -1,14 +1,13 @@
-import { PropertiesContext } from "@/providers/properties.context";
 import type { ElementType } from "@/shared/types";
-import { useContext } from "react";
 import FillSection from "./sections/fillSection";
 import PositionSection from "./sections/positionSection";
 import SizeSection from "./sections/sizeSection";
 import SectionWrapper from "./sectionWrapper";
 
+import { useProperties } from "@/providers/Properties.provider";
 import SourceSection from "./sections/sourceSection";
 export default function PropertiesBuilder() {
-  const properties = useContext(PropertiesContext);
+  const properties = useProperties();
   const { selectedElement } = properties;
 
   const renderSection = (section: ElementType) => {

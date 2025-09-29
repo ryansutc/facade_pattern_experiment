@@ -1,7 +1,6 @@
-import { PropertiesContext } from "@/providers/properties.context";
+import { useProperties } from "@/providers/Properties.provider";
 import type { ElementType, PositionProperties } from "@/shared/types";
 import { Grid, InputAdornment, TextField, Typography } from "@mui/material";
-import { useContext } from "react";
 
 export default function PositionSection({
   value,
@@ -11,7 +10,7 @@ export default function PositionSection({
   element?: ElementType;
 }) {
   const { left, top } = value;
-  const { setElement } = useContext(PropertiesContext);
+  const { setElement } = useProperties();
 
   const handleUpdateProperty = (
     property: keyof PositionProperties,

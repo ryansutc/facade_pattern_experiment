@@ -1,10 +1,9 @@
-import { PropertiesContext } from "@/providers/properties.context";
+import { useProperties } from "@/providers/Properties.provider";
 import { Grid, Typography } from "@mui/material";
-import { useContext } from "react";
 import PropertiesBuilder from "./propertiesBuilder";
 
 export default function Properties() {
-  const { selectedElement } = useContext(PropertiesContext);
+  const { selectedElement } = useProperties();
   return (
     <Grid
       container

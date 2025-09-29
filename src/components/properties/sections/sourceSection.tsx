@@ -1,8 +1,7 @@
-import { PropertiesContext } from "@/providers/properties.context";
+import { useProperties } from "@/providers/Properties.provider";
 import { IMAGES } from "@/shared/constants";
 import type { ElementType, SourceProperties } from "@/shared/types";
 import { Grid, MenuItem, TextField, Typography } from "@mui/material";
-import { useContext } from "react";
 
 export default function SizeSection({
   value,
@@ -12,7 +11,7 @@ export default function SizeSection({
   element: ElementType;
 }) {
   const { url } = value;
-  const { setElement } = useContext(PropertiesContext);
+  const { setElement } = useProperties();
 
   const handleUpdateProperty = (
     property: keyof SourceProperties,

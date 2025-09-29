@@ -1,4 +1,4 @@
-import { PropertiesContext } from "@/providers/properties.context";
+import { useProperties } from "@/providers/Properties.provider";
 import type { ElementType, FillProperties } from "@/shared/types";
 import {
   Box,
@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Sketch } from "@uiw/react-color";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 export default function FillSection({
   value,
@@ -20,7 +20,7 @@ export default function FillSection({
 }) {
   const { color } = value;
   const [showSketchPopup, setShowSketchPopup] = useState(false);
-  const { setElement } = useContext(PropertiesContext);
+  const { setElement } = useProperties();
 
   const handleUpdateProperty = (
     property: keyof FillProperties,
